@@ -1,3 +1,3 @@
 #!/bin/sh
 
-python src/main.py data/dev/b1.txt
+python src/coreference.py data/dev/b1.crf .
