@@ -1,0 +1,11 @@
+<TXT>
+<COREF ID="5">American Airlines unit</COREF> 
+<COREF ID="Y1">its pilots</COREF>
+<COREF ID="Y2">flight attendants</COREF>
+<COREF ID="14" REF="5">the company</COREF>
+<COREF ID="15" REF="5">American</COREF>
+<COREF ID="18" REF="Y1">the pilots</COREF>
+<COREF ID="19" REF="Y2">flight attendants</COREF>
+<COREF ID="24" REF="5">it</COREF>
+<COREF ID="36" REF="5">The company</COREF>
+</TXT>
