@@ -1,0 +1,2 @@
+responses/b1.response
+responses/b2.response
