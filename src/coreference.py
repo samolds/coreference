@@ -3,19 +3,18 @@
 from nltk.tokenize import sent_tokenize, word_tokenize
 import xml.etree.ElementTree as ET
 from nltk.corpus import names
-import random
 import nltk
 import sys
 import random
 from difflib import SequenceMatcher as editDifference
 
-# Uncomment for first run!
-#nltk.download('punkt')
-#nltk.download('maxent_ne_chunker')
-#nltk.download('words')
-#nltk.download('averaged_perceptron_tagger')
-#nltk.download('wordnet')
-#nltk.download('names')
+# Comment after first run!
+nltk.download('punkt')
+nltk.download('maxent_ne_chunker')
+nltk.download('words')
+nltk.download('averaged_perceptron_tagger')
+nltk.download('wordnet')
+nltk.download('names')
 
 #Function to calculate edit distances between two strings - not currently being used
 #from : https://en.wikibooks.org/wiki/Algorithm_Implementation/Strings/Levenshtein_distance#Python
