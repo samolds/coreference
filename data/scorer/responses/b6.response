@@ -1,26 +1,26 @@
 <TXT>
  870622-0030. 
- NBC to Put Contract Offer
-Into Effect; Strike Possible
+ <COREF ID="5C609">NBC</COREF> to Put Contract Offer
+Into Effect; <COREF ID="2D539">Strike Possible</COREF>
  06/22/87
- WALL STREET JOURNAL (J)
+ <COREF ID="30D2C">WALL STREET JOURNAL</COREF> (<COREF ID="5991A">J</COREF>)
  GE LABOR 
  NEW YORK  
 
 
- <COREF ID="1" REF="3">National Broadcasting Co.</COREF> told its technicians and news employees union that <COREF ID="3" REF="1">the network</COREF> will put into effect next Monday <COREF ID="4" REF="3">its latest contract offer</COREF>. 
- <COREF ID="6" REF="4">Union</COREF> leaders said the move probably means the union's 2,800 NBC members -- <COREF ID="9" REF="6">about a third of the company's work force</COREF> -- will strike. 
+ <COREF ID="1" REF="5991A">National Broadcasting Co.</COREF> told its technicians and <COREF ID="530A5">news</COREF> employees <COREF ID="B1F6F">union</COREF> that <COREF ID="3" REF="B1F6F">the network</COREF> will put into <COREF ID="385C5">effect</COREF> next <COREF ID="E536C">Monday</COREF> <COREF ID="4" REF="E536C">its latest contract offer</COREF>. 
+ <COREF ID="6" REF="B1F6F">Union</COREF> leaders said <COREF ID="B14A1">the move</COREF> probably means <COREF ID="30C7B">the union</COREF>'s 2,800 <COREF ID="6DEFD">NBC</COREF> members -- <COREF ID="9" REF="6DEFD">about a third of <COREF ID="E3DE1">the company</COREF>'s work force</COREF> -- will strike. 
 
 
- "It looks like <COREF ID="11" REF="1">we</COREF>'re going to be there on the street, unless there is a miracle," said John Krieger, <COREF ID="12" REF="6">a spokesman</COREF> for the National Association of Broadcast Employees and Technicians, which last struck NBC, a General Electric Co. unit, in 1976. 
+ "It looks like <COREF ID="11" REF="9">we</COREF>'re going to be there on <COREF ID="9DDFE">the street</COREF>, unless there is <COREF ID="C828C">a miracle</COREF>," said <COREF ID="F50DD">John Krieger</COREF>, <COREF ID="12" REF="C828C">a spokesman</COREF> for the <COREF ID="43BBB">National Association</COREF> of <COREF ID="9F028">Broadcast Employees</COREF> and Technicians, which <COREF ID="2F406">last struck</COREF> <COREF ID="B768B">NBC</COREF>, a <COREF ID="5CDDA">General Electric Co. unit</COREF>, in 1976. 
 
 
- The possibility of <COREF ID="15" REF="9">a strike</COREF> comes amid growing signs of a strike among members of the Directors Guild of America, whose talks with the three major networks on a contract to replace an agreement expiring June 30 appear to be stalling. 
+ <COREF ID="3D1FB">The possibility</COREF> of <COREF ID="15" REF="5CDDA">a strike</COREF> comes amid growing signs of a strike among members of the <COREF ID="39530">Directors Guild</COREF> of <COREF ID="3DDE2">America</COREF>, whose talks with the three major networks on <COREF ID="C1181">a contract</COREF> to replace <COREF ID="25C9F">an agreement</COREF> expiring <COREF ID="6D7A6">June</COREF> 30 <COREF ID="5E45D">appear</COREF> to be stalling. 
 
 
- On Tuesday, a federal mediator brought <COREF ID="16" REF="9">NBC</COREF> and <COREF ID="17" REF="12">the union</COREF> together for the first time since <COREF ID="18" REF="12">the union</COREF>'s four-year contract expired March 31. 
+ On <COREF ID="F1024">Tuesday</COREF>, <COREF ID="4F296">a federal mediator</COREF> brought <COREF ID="16" REF="B768B">NBC</COREF> and <COREF ID="17" REF="9DDFE">the union</COREF> together for <COREF ID="54043">the first time</COREF> since <COREF ID="18" REF="54043">the union</COREF>'s <COREF ID="91796">four-year contract</COREF> expired <COREF ID="08279">March</COREF> 31. 
  Both sides were deadlocked. 
- Areas of dispute include use of temporary workers at <COREF ID="19" REF="16">NBC</COREF>, the length of the new contract and use of non-network news services. 
+ <COREF ID="B2D4C">Areas</COREF> of <COREF ID="7BD7B">dispute</COREF> include <COREF ID="D8B0F">use</COREF> of temporary workers at <COREF ID="19" REF="16">NBC</COREF>, <COREF ID="FF968">the length</COREF> of <COREF ID="08B50">the new contract</COREF> and <COREF ID="A88AD">use</COREF> of <COREF ID="48D0B">non-network news</COREF> services. 
 
 
 </TXT>

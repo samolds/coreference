@@ -1,19 +1,19 @@
 <TXT>
  870805-0035. 
- Business Brief:
-Western Union Corp.
+ <COREF ID="036D9">Business Brief</COREF>:
+<COREF ID="2A385">Western Union Corp.</COREF>
  08/05/87
- WALL STREET JOURNAL (J)
+ <COREF ID="05B86">WALL STREET JOURNAL</COREF> (<COREF ID="58A21">J</COREF>)
  WU LABOR 
 
 
- <COREF ID="1" REF="3">Western Union Corp.</COREF> said its subsidiary, <COREF ID="3" REF="1">Western Union Telegraph Co.</COREF>, agreed to extend labor contracts with the United Telegraph Workers and the Communications Workers of America for three years. 
- <COREF ID="6" REF="3">The contracts</COREF>, signed in 1985 following strikes by the <COREF ID="17" REF="6">unions</COREF>, were to expire Aug. 6, according to the Upper Saddle River, N.J.-based <COREF ID="8" REF="17">communications systems company</COREF>. 
- The agreement provides for a one-year extension of <COREF ID="9" REF="6">the existing contracts</COREF>. 
- At the end of the first and second years, <COREF ID="10" REF="9">the company</COREF> or <COREF ID="11" REF="17">the unions</COREF> may choose to renegotiate wages, pensions and health care. 
- <COREF ID="12" REF="11">The accord</COREF> also provides for cost-of-living adjustments in the second and third years. 
- The United Telegraph Workers union represents 4,400 <COREF ID="14" REF="3">Western Union</COREF> employees around the country. 
- The Communications Workers of America represents 300 <COREF ID="16" REF="10">company</COREF> employees in New York City. 
+ <COREF ID="1" REF="2A385">Western Union Corp.</COREF> said its <COREF ID="5B658">subsidiary</COREF>, <COREF ID="3" REF="1">Western Union Telegraph Co.</COREF>, agreed to extend <COREF ID="583A0">labor</COREF> contracts with the <COREF ID="1067B">United Telegraph</COREF> Workers and the <COREF ID="D46C9">Communications Workers</COREF> of <COREF ID="DFF59">America</COREF> <COREF ID="290B9">for three years</COREF>. 
+ <COREF ID="6" REF="290B9">The contracts</COREF>, signed in 1985 following strikes by the <COREF ID="17" REF="6">unions</COREF>, were to expire <COREF ID="000F8">Aug.</COREF> 6, according to the <COREF ID="C8E53">Upper Saddle River</COREF>, N.J.-based <COREF ID="8" REF="C8E53">communications systems company</COREF>. 
+ <COREF ID="8C3AC">The agreement</COREF> provides for <COREF ID="440C4">a one-year extension</COREF> of <COREF ID="9" REF="6">the existing contracts</COREF>. 
+ At <COREF ID="DA037">the end</COREF> of the first and second years, <COREF ID="10" REF="DA037">the company</COREF> or <COREF ID="11" REF="10">the unions</COREF> may choose to renegotiate wages, pensions and <COREF ID="2F1B5">health care</COREF>. 
+ <COREF ID="12" REF="8C3AC">The accord</COREF> also provides for cost-of-living adjustments in the second and third years. 
+ The <COREF ID="51D94">United Telegraph Workers union</COREF> represents 4,400 <COREF ID="14" REF="3">Western Union</COREF> employees around <COREF ID="EA309">the country</COREF>. 
+ The Communications <COREF ID="ABF9A">Workers</COREF> of <COREF ID="08AC9">America</COREF> represents 300 <COREF ID="16" REF="10">company</COREF> employees in <COREF ID="031F5">New York City</COREF>. 
 
 
 </TXT>

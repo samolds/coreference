@@ -1,56 +1,56 @@
 <TXT>
  870420-0050. 
- (missing headline) 
- WALL STREET JOURNAL (J)
+ (missing <COREF ID="C865D">headline</COREF>) 
+ <COREF ID="8D210">WALL STREET JOURNAL</COREF> (<COREF ID="5E31B">J</COREF>)
  UAL LABOR
-AIRLINES (AIR)
-TENDER OFFERS, MERGERS, ACQUISITIONS (TNM) 
+<COREF ID="50275">AIR</COREF>LINES (AIR)
+<COREF ID="B3076">TENDER</COREF> <COREF ID="F7A5D">OFFERS</COREF>, <COREF ID="7061D">MERGERS</COREF>, <COREF ID="5133E">ACQUISITIONS</COREF> (<COREF ID="B4B93">TNM</COREF>) 
 
 
- As senior director of UAL, and a member of the executive committee of its board, <COREF ID="3" REF="6">I</COREF> am appalled at the inaccuracies and anti-management bias in the Journal's April 17 article about Richard Ferris, <COREF ID="6" REF="3">UAL's chief executive officer</COREF>. 
+ As <COREF ID="C43E0">senior director</COREF> of <COREF ID="2AED7">UAL</COREF>, and <COREF ID="4EC1B">a member</COREF> of <COREF ID="67229">the executive committee</COREF> of its <COREF ID="E2BEE">board</COREF>, <COREF ID="3" REF="5133E">I</COREF> am appalled at the inaccuracies and <COREF ID="F65C0">anti-management bias</COREF> in the Journal's <COREF ID="E8EAC">April</COREF> 17 <COREF ID="35AC7">article</COREF> about <COREF ID="CB5D4">Richard Ferris</COREF>, <COREF ID="6" REF="CB5D4">UAL's chief executive officer</COREF>. 
 
 
- <COREF ID="8" REF="6">The UAL board</COREF> is four-square behind <COREF ID="10" REF="8">Mr. Ferris</COREF>, <COREF ID="11" REF="10">his</COREF> management team and <COREF ID="12" REF="11">his</COREF> long-range strategy of making United a more competitive airline by combining <COREF ID="14" REF="12">it</COREF> with the premier hotel company and car rental company. 
- Contrary to what <COREF ID="15" REF="14">the Journal article</COREF> suggests, board members have not been dissatisfied with the financial performance of <COREF ID="18" REF="10">Westin Hotels</COREF> and <COREF ID="19" REF="10">Hertz</COREF>. 
+ <COREF ID="8" REF="6">The UAL board</COREF> is four-square behind <COREF ID="10" REF="CB5D4">Mr. Ferris</COREF>, <COREF ID="11" REF="10">his</COREF> <COREF ID="0D4E4">management team</COREF> and <COREF ID="12" REF="11">his</COREF> <COREF ID="1201D">long-range strategy</COREF> of making <COREF ID="F7A2C">United</COREF> a more <COREF ID="13899">competitive airline</COREF> by combining <COREF ID="14" REF="13899">it</COREF> with <COREF ID="B9DC4">the premier hotel company</COREF> and <COREF ID="01F3D">car</COREF> <COREF ID="8B8C3">rental company</COREF>. 
+ Contrary to what <COREF ID="15" REF="B9DC4">the Journal article</COREF> suggests, <COREF ID="85217">board</COREF> members have not been dissatisfied with <COREF ID="E7D22">the financial performance</COREF> of <COREF ID="18" REF="E7D22">Westin Hotels</COREF> and <COREF ID="19" REF="18">Hertz</COREF>. 
 
 
- Like <COREF ID="20" REF="10">Mr. Ferris</COREF>, <COREF ID="21" REF="20">the directors</COREF> have been dissatisfied with the earnings of United Airlines. 
- <COREF ID="23" REF="18">We</COREF> share <COREF ID="24" REF="14">his</COREF> determination to improve <COREF ID="25" REF="14">them</COREF>. 
- But <COREF ID="26" REF="23">we</COREF> recognize that fare wars begun by non-union airline competitors have been responsible for a large part of <COREF ID="27" REF="24">our</COREF> difficulties. 
- <COREF ID="28" REF="20">Mr. Ferris</COREF> and Jim Hartigan, <COREF ID="29" REF="20">president of United</COREF>, are taking steps to improve <COREF ID="31" REF="21">its earnings</COREF>. 
- First-quarter financial results of <COREF ID="33" REF="15">the airline</COREF> should show a substantial improvement over comparable 1986 results, raising the prospect of a much better year-over-year financial performance in 1987. 
+ Like <COREF ID="20" REF="10">Mr. Ferris</COREF>, <COREF ID="21" REF="E7D22">the directors</COREF> have been dissatisfied with the earnings of <COREF ID="C7669">United</COREF> Airlines. 
+ <COREF ID="23" REF="18">We</COREF> <COREF ID="C86BB">share</COREF> <COREF ID="24" REF="12">his</COREF> <COREF ID="DE2DD">determination</COREF> to improve <COREF ID="25" REF="DE2DD">them</COREF>. 
+ But <COREF ID="26" REF="25">we</COREF> recognize that <COREF ID="D2566">fare</COREF> wars begun by <COREF ID="30E8B">non-union airline</COREF> competitors have been responsible for <COREF ID="37388">a large part</COREF> of <COREF ID="27" REF="15">our</COREF> difficulties. 
+ <COREF ID="28" REF="20">Mr. Ferris</COREF> and <COREF ID="D4E56">Jim Hartigan</COREF>, <COREF ID="29" REF="D4E56">president of United</COREF>, are taking steps to improve <COREF ID="31" REF="29">its earnings</COREF>. 
+ First-quarter financial results of <COREF ID="33" REF="25">the airline</COREF> should show <COREF ID="8ACD8">a substantial improvement</COREF> over comparable 1986 results, raising <COREF ID="7A771">the prospect</COREF> of a much better <COREF ID="DB1F8">year-over-year financial performance</COREF> in 1987. 
 
 
- Contrary to the implication in <COREF ID="34" REF="15">your article</COREF>, the fact that the outside directors have employed independent legal and financial counsel in response to the pilots' proposal to purchase <COREF ID="36" REF="29">United</COREF> does not bespeak a lack of confidence in <COREF ID="37" REF="29">Mr. Ferris</COREF>. 
- The employment of <COREF ID="38" REF="29">independent counsel</COREF> by outside directors is standard procedure in proposed corporate buyout situations. 
+ Contrary to <COREF ID="CCCA2">the implication</COREF> in <COREF ID="34" REF="15">your article</COREF>, <COREF ID="99C69">the fact</COREF> that the outside directors have employed independent legal and <COREF ID="9E37F">financial counsel</COREF> in <COREF ID="0F23D">response</COREF> to the pilots' <COREF ID="5DDF1">proposal</COREF> to purchase <COREF ID="36" REF="29">United</COREF> does not bespeak <COREF ID="8F933">a lack</COREF> of <COREF ID="F6B9B">confidence</COREF> in <COREF ID="37" REF="28">Mr. Ferris</COREF>. 
+ <COREF ID="66FDB">The employment</COREF> of <COREF ID="38" REF="66FDB">independent counsel</COREF> by outside directors is <COREF ID="AD078">standard procedure</COREF> in <COREF ID="C2255">proposed corporate buyout</COREF> situations. 
 
 
- The Journal's reference to Donald Trump's reputed desire to cause the breakup of <COREF ID="40" REF="34">UAL</COREF> so that <COREF ID="41" REF="33">he</COREF> can own the Century Plaza Hotel in Los Angeles ignores an important fact: <COREF ID="42" REF="34">UAL</COREF> does not own <COREF ID="43" REF="40">the Century Plaza</COREF>. 
+ The Journal's reference to Donald Trump's <COREF ID="716DA">reputed desire</COREF> to cause <COREF ID="03DD6">the breakup</COREF> of <COREF ID="40" REF="8">UAL</COREF> so that <COREF ID="41" REF="03DD6">he</COREF> can own the <COREF ID="376E0">Century Plaza Hotel</COREF> in <COREF ID="EB75C">Los Angeles</COREF> ignores <COREF ID="6D2B6">an important fact</COREF>: <COREF ID="42" REF="40">UAL</COREF> does not own <COREF ID="43" REF="376E0">the Century Plaza</COREF>. 
 
 
- Most unfair and inaccurate was <COREF ID="44" REF="38">the Journal</COREF>'s reference to the case of the "570 newly hired pilots" whom United "tried to fire" because they "refused to cross picket lines." 
- <COREF ID="48" REF="41">These</COREF> are <COREF ID="49" REF="31">pilots</COREF> who in 1985 were offered and accepted pre-hiring training with the knowledge they would be expected to fly if United's service were to be disrupted by a strike later that year. 
+ Most unfair and <COREF ID="62B18">inaccurate</COREF> was <COREF ID="44" REF="43">the Journal</COREF>'s reference to <COREF ID="F7DC9">the case</COREF> of the "570 newly hired pilots" whom <COREF ID="00F54">United</COREF> "tried to fire" because they "refused to cross <COREF ID="8BE3E">picket</COREF> lines." 
+ <COREF ID="48" REF="8BE3E">These</COREF> are <COREF ID="49" REF="48">pilots</COREF> who in 1985 were offered and accepted <COREF ID="E0227">pre-hiring training</COREF> with <COREF ID="7011F">the knowledge</COREF> they would be expected to fly if United's service were to be disrupted by <COREF ID="EF655">a strike</COREF> later that <COREF ID="443A0">year</COREF>. 
 
 
- When the pilots' strike occurred, <COREF ID="56" REF="31">the trainees</COREF> declined to cross the picket line; thus, <COREF ID="58" REF="44">United</COREF> declined to hire <COREF ID="59" REF="27">them</COREF>. 
- In litigation that arose out of <COREF ID="60" REF="43">the strike</COREF>, a federal district court ruled that <COREF ID="61" REF="56">the 570 individuals</COREF> must be hired by <COREF ID="62" REF="58">United</COREF>, and <COREF ID="63" REF="48">they</COREF> have been flying in <COREF ID="64" REF="58">United</COREF> cockpits ever since. 
+ When the pilots' <COREF ID="070FA">strike</COREF> occurred, <COREF ID="56" REF="7011F">the trainees</COREF> declined to cross <COREF ID="B0295">the picket line</COREF>; thus, <COREF ID="58" REF="00F54">United</COREF> declined to hire <COREF ID="59" REF="41">them</COREF>. 
+ In <COREF ID="FFA6C">litigation</COREF> that arose out of <COREF ID="60" REF="59">the strike</COREF>, <COREF ID="2890C">a federal district court</COREF> ruled that <COREF ID="61" REF="60">the 570 individuals</COREF> must be hired by <COREF ID="62" REF="58">United</COREF>, and <COREF ID="63" REF="59">they</COREF> have been flying in <COREF ID="64" REF="62">United</COREF> cockpits ever since. 
 
 
- Recently, the U.S. Supreme Court upheld a circuit court reversal of <COREF ID="65" REF="62">the district court</COREF>, and held that <COREF ID="66" REF="62">United</COREF> was not required to hire <COREF ID="67" REF="61">the 570 pilots</COREF>. 
- However, in an effort to let bygones be bygones, <COREF ID="68" REF="65">United</COREF> management declined to take advantage of <COREF ID="69" REF="59">its</COREF> court victory, and <COREF ID="70" REF="66">it</COREF> retained <COREF ID="71" REF="67">the 570 pilots</COREF> with seniority dating from 1985 when <COREF ID="73" REF="63">they</COREF> actually began flying for <COREF ID="74" REF="68">United</COREF>. 
+ Recently, the <COREF ID="229A4">U.S. Supreme Court</COREF> upheld <COREF ID="132FE">a circuit court reversal</COREF> of <COREF ID="65" REF="63">the district court</COREF>, and held that <COREF ID="66" REF="64">United</COREF> was not required to hire <COREF ID="67" REF="65">the 570 pilots</COREF>. 
+ However, in <COREF ID="E4EC5">an effort</COREF> to let bygones be bygones, <COREF ID="68" REF="66">United</COREF> management declined to take <COREF ID="976B5">advantage</COREF> of <COREF ID="69" REF="49">its</COREF> <COREF ID="31063">court victory</COREF>, and <COREF ID="70" REF="69">it</COREF> retained <COREF ID="71" REF="67">the 570 pilots</COREF> with <COREF ID="5173F">seniority</COREF> dating from 1985 when <COREF ID="73" REF="63">they</COREF> actually began flying for <COREF ID="74" REF="68">United</COREF>. 
 
 
- Neither <COREF ID="75" REF="68">Mr. Ferris</COREF> nor <COREF ID="76" REF="71">the board of directors</COREF> has any desire to "break" the pilots' union. 
- If harsh things were said by either side in the heat of <COREF ID="78" REF="60">the 1985 pilot strike</COREF>, or since, we regret <COREF ID="81" REF="70">them</COREF>, and want to forget <COREF ID="82" REF="70">them</COREF>. 
- <COREF ID="83" REF="73">We</COREF> like and admire <COREF ID="84" REF="76">our pilots</COREF>, who are the best in the business, and <COREF ID="85" REF="73">we</COREF> respect <COREF ID="86" REF="82">their</COREF> right to have a strong union. 
- <COREF ID="87" REF="83">We</COREF> are sure that, likewise, <COREF ID="88" REF="85">they</COREF> want <COREF ID="89" REF="86">us</COREF> to do <COREF ID="90" REF="86">our</COREF> best to keep <COREF ID="91" REF="75">United</COREF> a strong and prosperous employer. 
+ Neither <COREF ID="75" REF="37">Mr. Ferris</COREF> nor <COREF ID="76" REF="73">the board of directors</COREF> has <COREF ID="CA64E">any desire</COREF> to "break" the pilots' <COREF ID="487AF">union</COREF>. 
+ If harsh things were said by <COREF ID="98B6C">either side</COREF> in <COREF ID="7DCEF">the heat</COREF> of <COREF ID="78" REF="7DCEF">the 1985 pilot strike</COREF>, or since, we regret <COREF ID="81" REF="73">them</COREF>, and want to forget <COREF ID="82" REF="81">them</COREF>. 
+ <COREF ID="83" REF="23">We</COREF> like and admire <COREF ID="84" REF="31063">our pilots</COREF>, who are the best in <COREF ID="4D93C">the business</COREF>, and <COREF ID="85" REF="26">we</COREF> respect <COREF ID="86" REF="82">their</COREF> <COREF ID="4DA2A">right</COREF> to have <COREF ID="AA5C7">a strong union</COREF>. 
+ <COREF ID="87" REF="83">We</COREF> are sure that, likewise, <COREF ID="88" REF="86">they</COREF> want <COREF ID="89" REF="4D93C">us</COREF> to do <COREF ID="90" REF="84">our</COREF> best to keep <COREF ID="91" REF="74">United</COREF> a strong and <COREF ID="D497C">prosperous employer</COREF>. 
 
-<COREF ID="92" REF="78">Charled F. Luce</COREF>
+<COREF ID="92" REF="D497C">Charled F. Luce</COREF>
 Chicago
 ---
 
- <COREF ID="93" REF="78">UAL</COREF> has a management contract to operate <COREF ID="94" REF="78">the Century Plaza</COREF>. 
- Any acquisition of <COREF ID="95" REF="92">UAL</COREF> wouldn't confer ownership rights. -- Ed. 
+ <COREF ID="93" REF="42">UAL</COREF> has <COREF ID="2A594">a management contract</COREF> to operate <COREF ID="94" REF="88">the Century Plaza</COREF>. 
+ <COREF ID="DA3A9">Any acquisition</COREF> of <COREF ID="95" REF="93">UAL</COREF> wouldn't confer <COREF ID="81E60">ownership</COREF> rights. -- <COREF ID="A50A1">Ed</COREF>. 
 
 
 </TXT>

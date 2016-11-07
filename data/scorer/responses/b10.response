@@ -1,28 +1,28 @@
 <TXT>
  871103-0032. 
- Mediator Enters the Talks
-Between Big Board, Union
+ <COREF ID="EA18B">Mediator</COREF> Enters the Talks
+Between Big Board, <COREF ID="4E9E3">Union</COREF>
  11/03/87
- WALL STREET JOURNAL (J)
+ <COREF ID="1281A">WALL STREET JOURNAL</COREF> (<COREF ID="CF773">J</COREF>)
  LABOR
-SECURITIES INDUSTRY (SCR) 
+SECURITIES INDUSTRY (<COREF ID="A0157">SCR</COREF>) 
  NEW YORK  
 
 
- <COREF ID="1" REF="2">A federal mediator</COREF> is trying to reconcile the <COREF ID="2" REF="1">New York Stock Exchange</COREF> and about 1,300 of its <COREF ID="3" REF="2">clerical and operations staff members</COREF>, whose <COREF ID="4" REF="1">union</COREF> contract expired Saturday night. 
+ <COREF ID="1" REF="1281A">A federal mediator</COREF> is trying to reconcile the <COREF ID="2" REF="1">New York Stock Exchange</COREF> and about 1,300 of its <COREF ID="3" REF="2">clerical and operations <COREF ID="26BA7">staff</COREF> members</COREF>, whose <COREF ID="4" REF="4E9E3">union</COREF> contract expired <COREF ID="E71B5">Saturday night</COREF>. 
 
 
- <COREF ID="5" REF="1">The mediator</COREF> has imposed a news blackout on the two sides, so a Big Board spokesman couldn't comment on the <COREF ID="7" REF="3">talks</COREF>. 
- <COREF ID="8" REF="4">The spokesman</COREF> did say that <COREF ID="9" REF="2">the exchange</COREF> would be able to function normally in the event of a walkout. 
+ <COREF ID="5" REF="1">The mediator</COREF> has imposed <COREF ID="3A47C">a news blackout</COREF> on the two sides, so a <COREF ID="6BF85">Big Board spokesman</COREF> couldn't comment on the <COREF ID="7" REF="6BF85">talks</COREF>. 
+ <COREF ID="8" REF="5">The spokesman</COREF> did say that <COREF ID="9" REF="8">the exchange</COREF> would be able to function normally in <COREF ID="14028">the event</COREF> of <COREF ID="69204">a walkout</COREF>. 
 
 
- <COREF ID="10" REF="7">The workers</COREF>, <COREF ID="11" REF="10">members of the Office and Professional Employees International Union Local 153</COREF>, work for <COREF ID="12" REF="9">the exchange</COREF>; for Securities Industry Automation Corp., which operates <COREF ID="13" REF="9">the exchange</COREF>'s computers and of which <COREF ID="14" REF="8">the Big Board</COREF> owns two-thirds; and for the New York Futures Exchange, <COREF ID="15" REF="8">a unit of the Big Board</COREF>. 
+ <COREF ID="10" REF="8">The workers</COREF>, <COREF ID="11" REF="10">members of the <COREF ID="BF340">Office</COREF> and <COREF ID="1DAA6">Professional Employees International Union Local</COREF> 153</COREF>, <COREF ID="20A9F">work</COREF> for <COREF ID="12" REF="11">the exchange</COREF>; for Securities <COREF ID="89BF4">Industry Automation Corp.</COREF>, which operates <COREF ID="13" REF="12">the exchange</COREF>'s computers and of which <COREF ID="14" REF="13">the Big Board</COREF> owns two-thirds; and for the <COREF ID="48248">New York Futures Exchange</COREF>, <COREF ID="15" REF="48248">a unit of the Big Board</COREF>. 
 
 
- Officials at <COREF ID="17" REF="8">the union</COREF> and the <COREF ID="18" REF="13">Federal Mediation and Conciliation Service</COREF> couldn't be reached for comment. 
+ Officials at <COREF ID="17" REF="15">the union</COREF> and the <COREF ID="18" REF="17">Federal Mediation and Conciliation Service</COREF> couldn't be reached for <COREF ID="73DBD">comment</COREF>. 
 
 
- When <COREF ID="19" REF="15">the union</COREF>'s previous contract expired in October 1984, <COREF ID="20" REF="17">the union</COREF> kept working for eight months without a contract until an agreement was reached in June 1985. 
+ When <COREF ID="19" REF="17">the union</COREF>'s <COREF ID="6AECE">previous contract</COREF> expired in <COREF ID="E4159">October</COREF> 1984, <COREF ID="20" REF="19">the union</COREF> kept working <COREF ID="FE0B7">for eight months</COREF> without <COREF ID="976B4">a contract</COREF> until <COREF ID="99700">an agreement</COREF> was reached in <COREF ID="683B3">June</COREF> 1985. 
 
 
 </TXT>

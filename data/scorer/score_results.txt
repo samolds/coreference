@@ -1,0 +1,123 @@
+Number of pronouns resolved: 1 (0.20)
+Number of common nouns resolved: 6 (0.29)
+Number of proper nouns resolved: 19 (0.63)
+Response resolutions: 56
+Truth resolutions: 56
+Total correct: 26
+Document a10 Score:  0.46
+
+Number of pronouns resolved: 2 (0.20)
+Number of common nouns resolved: 5 (0.20)
+Number of proper nouns resolved: 6 (0.25)
+Response resolutions: 59
+Truth resolutions: 59
+Total correct: 13
+Document a11 Score:  0.22
+
+Number of pronouns resolved: 0 (0.00)
+Number of common nouns resolved: 3 (0.15)
+Number of proper nouns resolved: 8 (0.40)
+Response resolutions: 44
+Truth resolutions: 44
+Total correct: 11
+Document a12 Score:  0.25
+
+Number of pronouns resolved: 0 (0.00)
+Number of common nouns resolved: 4 (0.15)
+Number of proper nouns resolved: 9 (0.38)
+Response resolutions: 56
+Truth resolutions: 56
+Total correct: 13
+Document a8 Score:  0.23
+
+Number of pronouns resolved: 1 (0.20)
+Number of common nouns resolved: 1 (0.11)
+Number of proper nouns resolved: 15 (0.43)
+Response resolutions: 49
+Truth resolutions: 49
+Total correct: 17
+Document a9 Score:  0.35
+
+Number of pronouns resolved: 1 (0.25)
+Number of common nouns resolved: 2 (0.33)
+Number of proper nouns resolved: 4 (0.50)
+Response resolutions: 18
+Truth resolutions: 18
+Total correct: 7
+Document b1 Score:  0.39
+
+There are no pronouns to resolve in this document.
+Number of common nouns resolved: 4 (0.44)
+Number of proper nouns resolved: 4 (0.44)
+Response resolutions: 18
+Truth resolutions: 18
+Total correct: 8
+Document b10 Score:  0.44
+
+Number of pronouns resolved: 1 (0.20)
+Number of common nouns resolved: 9 (0.36)
+Number of proper nouns resolved: 5 (0.50)
+Response resolutions: 40
+Truth resolutions: 40
+Total correct: 15
+Document b2 Score:  0.38
+
+Number of pronouns resolved: 1 (0.06)
+Number of common nouns resolved: 8 (0.32)
+Number of proper nouns resolved: 96 (0.74)
+Response resolutions: 171
+Truth resolutions: 171
+Total correct: 105
+Document b3 Score:  0.61
+
+Number of pronouns resolved: 10 (0.48)
+Number of common nouns resolved: 3 (0.18)
+Number of proper nouns resolved: 18 (0.62)
+Response resolutions: 67
+Truth resolutions: 67
+Total correct: 31
+Document b4 Score:  0.46
+
+Number of pronouns resolved: 1 (0.12)
+Number of common nouns resolved: 3 (0.23)
+Number of proper nouns resolved: 2 (0.33)
+Response resolutions: 27
+Truth resolutions: 27
+Total correct: 6
+Document b5 Score:  0.22
+
+Number of pronouns resolved: 1 (1.00)
+Number of common nouns resolved: 0 (0.00)
+Number of proper nouns resolved: 3 (0.75)
+Response resolutions: 12
+Truth resolutions: 12
+Total correct: 4
+Document b6 Score:  0.33
+
+There are no pronouns to resolve in this document.
+Number of common nouns resolved: 2 (0.33)
+Number of proper nouns resolved: 3 (0.60)
+Response resolutions: 11
+Truth resolutions: 11
+Total correct: 5
+Document b7 Score:  0.45
+
+Number of pronouns resolved: 2 (0.18)
+Number of common nouns resolved: 12 (0.33)
+Number of proper nouns resolved: 26 (0.59)
+Response resolutions: 91
+Truth resolutions: 91
+Total correct: 40
+Document b8 Score:  0.44
+
+Number of pronouns resolved: 0 (0.00)
+Number of common nouns resolved: 4 (0.40)
+Number of proper nouns resolved: 2 (0.50)
+Response resolutions: 17
+Truth resolutions: 17
+Total correct: 6
+Document b9 Score:  0.35
+
+-------------------------------------------------
+Final accuracy score: 0.4171
+-------------------------------------------------
