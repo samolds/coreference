@@ -13,6 +13,7 @@ A University of Utah Natural Language Processing project for
 ```sh
 git clone https://github.com/samolds/coreference.git
 pip install --user nltk
+pip install --user numpy
 cd coreference
 ./run.sh
 ```

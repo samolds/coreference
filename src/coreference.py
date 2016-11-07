@@ -1,19 +1,22 @@
 #!/usr/bin/python2.7
 
 from nltk.tokenize import sent_tokenize, word_tokenize
-import sys
 import xml.etree.ElementTree as ET
+from nltk.corpus import names
+import random
 import nltk
+import sys
 import os
 
 
 # Uncomment for first run!
-# nltk.download('punkt')
-# nltk.download('maxent_ne_chunker')
-# nltk.download('words')
-# nltk.download('averaged_perceptron_tagger')
-# nltk.download('wordnet')
-# nltk.download('names')
+#nltk.download('punkt')
+#nltk.download('maxent_ne_chunker')
+#nltk.download('words')
+#nltk.download('averaged_perceptron_tagger')
+#nltk.download('wordnet')
+#nltk.download('names')
+
 
 # Function that actually finds the coreference from within a list of possible NPs
 def find_coref(ind, anaphor,
@@ -64,9 +67,6 @@ def get_number(POS):
 def get_gender(string):
     # Check for gender agreement
 
-    from nltk.corpus import names
-    import random
-
     labeled_names = (
         [(name, 'male') for name in names.words('male.txt')] + [(name, 'female') for name in names.words('female.txt')])
     random.shuffle(labeled_names)
@@ -80,94 +80,149 @@ def get_gender(string):
 
     return classifier.classify(gender_features(string))
 
+
+# TODO(sam): move to utils
+def generate_coref_id():
+  key = ''.join(random.choice('0123456789ABCDEF') for i in range(16))
+  return key
+
+
+# TODO(sam): move to utils
+def insert_coref_tag(data, coref_id):
+    tag = '<COREF ID="%s"' % coref_id
+    # find coref in original text
+    pos_in_text = data.find(tag) + len(tag)
+    # smash the new reference id into the original file data
+    data = '%s REF="%s"%s' % (data[:pos_in_text], coref['id'], data[pos_in_text:])
+    return data
+
+
+def add_np_coref_tags(data):
+    # convert data to proper xml object to easily exact the pure text from data
+    xml_data = ET.fromstring(data)
+    pure_text = ET.tostring(xml_data, encoding='utf8', method='text')
+
+    # get sentences
+    sentences = sent_tokenize(pure_text)
+
+    # add pos tags to all tokens per sentence
+    tagged_sentences = []
+    for sentence in sentences:
+        tokens = nltk.word_tokenize(sentence)
+        tagged_sentences.append(nltk.pos_tag(tokens))
+
+    # TODO: find a good grammar to parse the sentences into tree structures
+    # http://www.nltk.org/book/ch07.html
+    grammar = "NP: {<DT>?<JJ>*<NN>+ |\
+               <DT><NN><NN>. |\
+               <IN><CD><NNS> |\
+               <IN><CD><NN> |\
+               <DT><NN> |\
+               <NNP>+<POS>*<NN>*}"
+    cp = nltk.RegexpParser(grammar)
+
+    # parse each of the tagged sentences into recrusive tree structures
+    treed_sentences = []
+    for tagged_sentence in tagged_sentences:
+        treed_sentences.append(cp.parse(tagged_sentence))
+
+    # builds the full, corefed and tagged data string back up while tearing
+    # down the existing data string
+    corefed_data = ""
+
+    # tears down the existing data string while adding coref tags to all nps
+    for parse in treed_sentences:
+        for subtree in parse.subtrees(filter=lambda t: t.label() == 'NP'):
+            # builds up the noun phrase from the flattened subtree
+            constituents = [constituent[0] for constituent in subtree.flatten()]
+            noun_phrase = " ".join(constituents)
+
+            # finds the position to smash the tag into the data string
+            beg_pos_in_data = data.find(noun_phrase)
+            if beg_pos_in_data == -1:
+                # the noun phrase wasn't found (probably a problem with new lines)
+                continue
+
+            end_pos_in_data = beg_pos_in_data + len(noun_phrase)
+            if "COREF" in data[beg_pos_in_data:end_pos_in_data]:
+                # the noun phrase has likely already been marked with coref tag
+                continue
+
+            # len("</COREF>") == 8
+            if len(data) > end_pos_in_data + 8 and \
+               "</COREF>" in data[beg_pos_in_data:end_pos_in_data + 8]:
+                # the noun phrase has likely already been marked with coref tag
+                continue
+
+            # len("<COREF ID="xxx">") == 16
+            if beg_pos_in_data > 16 and \
+               "<COREF ID=" in data[beg_pos_in_data - 16:end_pos_in_data]:
+                # the noun phrase has likely already been marked with coref tag
+                continue
+
+            prev_data = corefed_data + data[:beg_pos_in_data]
+            new_coref_id = generate_coref_id()
+
+            # smashes a new coreference tag into the data text
+            corefed_data = "%s<COREF ID=\"%s\">%s</COREF>" % (prev_data,
+                           new_coref_id, noun_phrase)
+            data = data[end_pos_in_data:]
+
+    if len(data) > 0:
+      corefed_data = corefed_data + data
+
+    return corefed_data
+
+
 # main "method" that kicks off various routines
 if __name__ == "__main__":
     if not len(sys.argv) == 3:
-        print "expected usage:\n\tpython main.py <list_file> <response_dir>"
+        print "expected usage:\n\tpython coreference.py <list_file> <response_dir>"
         exit(1)
 
     # open files
-    files = open(sys.argv[1], 'r')
+    file_list = open(sys.argv[1], 'r')
 
-    # For each file, run the coreference algorithm:
-    for file in files:
-        infile = file.replace('\n', ' ').replace('\r', '').strip()
-        data = open(infile, 'r').read()
+    # for each file, run the coreference algorithm:
+    for filename in file_list:
+        infile = filename.strip()
+        data = open(infile, 'r').read() # raw original file data
 
-        #Strip XML
-        anaphors = ET.fromstring(data)
+        # do pos tagging to figure out which other words likely need the xml
+        # coreference tags. adds xml coref tags to all noun phrases
+        #data = add_np_coref_tags(data) # drops accuracy down to 17%
 
+        # gets just the xml'd/pre-labeled coreference tokens
+        anaphors = ET.fromstring(data) # just the xml'd bits of the text
+
+        # build list of all anaphors
         anaphorList = []
         for anaphor in anaphors:
             tokens = nltk.word_tokenize(anaphor.text)
             tagged = nltk.pos_tag(tokens)
 
-            el = {'id': anaphor.attrib['ID'], 'text': anaphor.text, 'POS': tagged, 'number': get_number(tagged[-1][1]), \
-                  'gender': get_gender(anaphor.text[- 1])}
+            # build element to hold all relevant information about anaphor
+            anaphorList.append({
+              'id': anaphor.attrib['ID'],
+              'text': anaphor.text,
+              'POS': tagged,
+              'number': get_number(tagged[-1][1]),
+              'gender': get_gender(anaphor.text[-1]),
+            })
 
-            anaphorList.append(el)
-
+        # add reference ids from anaphors to existing labeled tokens
         for ind, anaphor in enumerate(anaphorList):
+            # finds the coreference to 
             coref = find_coref(ind, anaphor, anaphorList)
+            data = insert_coref_tag(data, anaphor['id'])
 
-            # Find coref in original text:
-            string = '<COREF ID="' + anaphor['id'] + '"'
-            posInText = data.find(string) + len(string)
-            data = data[:posInText] + ' REF="' + coref['id'] + '"' + data[posInText:]
 
-        crf_file, crf_path = os.path.splitext(sys.argv[1])
-        out_file, out_path = os.path.splitext(sys.argv[2])
-
+        # get just the input filename to build the corresponding output file path
         infile = infile.split('.')[0].split('/')[-1]
         outfile = sys.argv[2] + '/' + infile + '.response'
 
         # print outfile
         with open(outfile, "w") as text_file:
-            text_file.write("%s" % data)
+            text_file.write(data)
 
-
-        ## Not currently being used for the algorithm!!
-
-        # Splitting Sentences
-        pureText = ET.tostring(anaphors, encoding='utf8', method='text')
-        allSentences = sent_tokenize(pureText)
-
-        # POS tagging
-        tagged = []
-
-        for sentence in allSentences:
-            tokens = nltk.word_tokenize(sentence)
-            tagged.append(nltk.pos_tag(tokens))
-
-        # TO DO: find a good grammer to parse the sentences already tagged with POS
-
-        grammar = "NP: {<DT>?<JJ>*<NN>+ | <DT><NN><NN>. | <IN><CD><NNS> | <IN><CD><NN> | <DT><NN> | <NNP>+<POS>*<NN>*}"
-
-        cp = nltk.RegexpParser(grammar)
-
-        parsed = [];
-        for taggedSentence in tagged:
-            parsed.append(cp.parse(taggedSentence))
-
-        for parse in parsed:
-            for subtree in parse.subtrees(filter=lambda t: t.label() == 'NP'):
-                print(subtree)
-
-        # close files
-        # file.close()
-
-
-        # parsed.draw()
-        #  entities = nltk.chunk.ne_chunk(tagged)
-
-        # for pos in parsed.treepositions():
-        #   print parsed[pos]
-        # for subtree in parsed.subtrees():
-        #   print(subtree)
-
-        # for subtree in parsed.subtrees(filter=lambda t: t.label() == 'NP'):
-        #   print(subtree)
-
-        # print("tagged = %s") % (tagged)
-        # print("entities = %s") % (entities)
-        # print("parsed = %s") % (parsed)
+    file_list.close()
