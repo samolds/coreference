@@ -5,6 +5,8 @@ import sys
 import xml.etree.ElementTree as ET
 import nltk
 import os
+import random
+import string
 
 
 # Uncomment for first run!
@@ -65,7 +67,7 @@ def get_gender(string):
     # Check for gender agreement
 
     from nltk.corpus import names
-    import random
+
 
     labeled_names = (
         [(name, 'male') for name in names.words('male.txt')] + [(name, 'female') for name in names.words('female.txt')])
@@ -103,16 +105,18 @@ if __name__ == "__main__":
             tagged = nltk.pos_tag(tokens)
 
             el = {'id': anaphor.attrib['ID'], 'text': anaphor.text, 'POS': tagged, 'number': get_number(tagged[-1][1]), \
-                  'gender': get_gender(anaphor.text[- 1])}
+                  'gender': get_gender(anaphor.text.strip()[- 1])}
 
             anaphorList.append(el)
+
+
 
         for ind, anaphor in enumerate(anaphorList):
             coref = find_coref(ind, anaphor, anaphorList)
 
             # Find coref in original text:
-            string = '<COREF ID="' + anaphor['id'] + '"'
-            posInText = data.find(string) + len(string)
+            searchString = '<COREF ID="' + anaphor['id'] + '"'
+            posInText = data.find(searchString) + len(searchString)
             data = data[:posInText] + ' REF="' + coref['id'] + '"' + data[posInText:]
 
         crf_file, crf_path = os.path.splitext(sys.argv[1])
@@ -151,7 +155,11 @@ if __name__ == "__main__":
 
         for parse in parsed:
             for subtree in parse.subtrees(filter=lambda t: t.label() == 'NP'):
-                print(subtree)
+                # el = {'id': ''.join(random.choice(string.ascii_uppercase + string.digits) for _ in range(3)), \
+                #       'text': subst.text, 'POS': subtree.leaves(),
+                #       'number': get_number(subtree.leaves()[-1][1]), \
+                #       'gender': get_gender(subtree.text[- 1])}
+                print(subtree.leaves())
 
         # close files
         # file.close()
