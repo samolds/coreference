@@ -5,5 +5,4 @@ source virtual_env/bin/activate
 
 pip install nltk
 
-
-python src/coreference.py allFiles.txt data/scorer/responses 
+python src/coreference.py singleFile.txt data/scorer/responses 
