@@ -2,7 +2,5 @@
 *.pyc
 .Python
 .DS_Store
-/bin/
-/lib/
-/include/
-/local/
+
+/virtualenv/

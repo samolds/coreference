@@ -12,16 +12,32 @@ A University of Utah Natural Language Processing project for
 
 ```sh
 git clone https://github.com/samolds/coreference.git
-pip install --user nltk
-pip install --user numpy
 cd coreference
+./setup.sh
+```
+
+Then you can use this to run it whenever
+
+```sh
 ./run.sh
 ```
 
-Note: On MacOSX `pip install --user nltk` puts the build in
-      `$HOME/Library/Python/2.7/lib/python/site-packages/nltk/`
-      On Linux (ie Cade), nltk will get put into
-      `$HOME/.local/lib/python2.7/site-packages/nltk`
+NOTE: The first time you run this after running `./setup`, it may take some
+time because additional stuff will be downloaded. Many much helper NLTK data
+will be installed at `$HOME/nltk_data`
+
+
+## To Test
+
+Runs entire program and then runs the corresponding tests against dev data
+```sh
+./testdev.sh
+```
+
+Runs entire program and then runs the corresponding tests against test1 data
+```sh
+./test1.sh
+```
 
 
 ## Authors
