@@ -4,3 +4,6 @@
 .DS_Store
 
 /virtualenv/
+
+/data/filelists/responselist.txt
+/scorer/responses/*.response

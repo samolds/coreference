@@ -32,10 +32,13 @@ if __name__ == "__main__":
     outfile = sys.argv[2]
     print "Processing:\n\t%s\nInto: %s" % ("\n\t".join(file_list), outfile)
 
-    responsefile = open("data/filelists/responselist.txt", "w")
+    responselist_file_name = "data/filelists/responselist.txt"
+    responsefile = open(responselist_file_name, "w")
     for filename in file_list:
       responsefilename = utils.build_new_file_path(filename, "responses")
       responsefile.write(responsefilename + "\n")
     responsefile.close()
 
     coreference.process_files(file_list, outfile)
+
+    print "\nDone coreference tagging! Response file list: %s" % responselist_file_name
