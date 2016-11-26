@@ -8,23 +8,28 @@ import nltk
 
 
 # Function that actually finds the coreference from within a list of possible NPs
-def find_coref(ind, anaphor, NP_List):
+# returns an id of the tagged coref noun phrase or `None` if nothing was found
+def find_coref(anaphor_idx, np_list):
     # Fist attempt at coreferencing based on gender, number agreement, and
     # string matching
-    # Only consider anaphors/NPs that show up before the current one
-    for el in list(reversed(range(ind))):
-        coref = NP_List[el]
 
+    anaphor = np_list[anaphor_idx]
+    prior_anaphor_indices = range(anaphor_idx - 1, -1, -1)
+
+    # Only consider anaphors/NPs that show up before the current one
+    for prior_anaphor_idx in prior_anaphor_indices:
+        coref = np_list[prior_anaphor_idx]
+
+        # exact string match or just the head nouns match
         if anaphor['text'] == coref['text'] or \
-            anaphor['text'].split()[-1] in coref or \
-            anaphor['text'].split()[0] in coref['text']:
-            # String Matching - entire NP or head noun
-            # print 'Found on string matching' + anaphor['text'] + '  ' + coref['text']
+            anaphor['text'].split()[-1] == coref['text'].split()[-1]:
             return coref
 
+        ## strings are very similar
         if editDifference(None, anaphor['text'], coref['text']).ratio() > 0.65:
             return coref
 
+    #import pdb; pdb.set_trace()
     # TODO: include pronoun resolution
     #No string matching was found, search again, this time with pronoun resolution
 
@@ -32,20 +37,23 @@ def find_coref(ind, anaphor, NP_List):
     # TODO: include named entity resolution
     #No prior resolution was found, search again, this time with named entity resolution
 
-
     # No prior resolution was found, search again, this time with gender and number
-    for el in list(reversed(range(ind))):
-        coref = NP_List[el]
+    for prior_anaphor_idx in prior_anaphor_indices:
+        coref = np_list[prior_anaphor_idx]
 
-        if anaphor['gender'] == coref['gender'] and anaphor['number'] == coref[
-            'number']:  # check for gender and number, or string agreement
+        # check for gender and number, or string agreement
+        if anaphor['gender'] == coref['gender'] and \
+            anaphor['pluralality'] == coref['pluralality']:
             return coref
 
+    #import pdb; pdb.set_trace()
+
     # # Temporary fix to cases where no coref was found
-    if ind > 0:
-        return NP_List[ind - 1]
-    else:
-        return NP_List[ind + 1]
+    return None
+    #if anaphor_idx > 0:
+    #    return np_list[anaphor_idx - 1]
+    #else:
+    #    return np_list[anaphor_idx + 1]
 
 
 def add_np_coref_tags(data):
@@ -103,7 +111,7 @@ def add_np_coref_tags(data):
                 continue
 
             prev_data = corefed_data + data[:beg_pos_in_data]
-            new_coref_id = utils.generate_coref_id()
+            new_coref_id = utils.generate_coref_id(6) # 6 characters long
 
             # smashes a new coreference tag into the data text
             corefed_data = "%s<COREF ID=\"%s\">%s</COREF>" % (prev_data,
@@ -132,27 +140,28 @@ def process_files(file_list, out_file):
         anaphors = ET.fromstring(data) # just the xml'd bits of the text
 
         # build list of all anaphors
-        anaphorList = []
+        anaphor_list = []
 
         for anaphor in anaphors:
             tokens = word_tokenize(anaphor.text)
             tagged = nltk.pos_tag(tokens)
 
             # build element to hold all relevant information about anaphora
-            anaphorList.append({
+            anaphor_list.append({
                 'id': anaphor.attrib['ID'],
                 'text': anaphor.text,
-                'POS': tagged,
-                'number': utils.get_number(tagged[-1][1]),
+                'pos': tagged,
+                'pluralality': utils.get_pluralality(tagged[-1][1]),
                 'gender': utils.get_gender(anaphor.text[-1]),
-                })
+            })
 
-        for ind, anaphor in enumerate(anaphorList):
-            # finds the coreference to 
-            coref = find_coref(ind, anaphor, anaphorList)
+        for idx, anaphor in enumerate(anaphor_list):
             if len(anaphor['id']) < 4:
-                # only insert corefs for the original anaphora
-                data = utils.insert_coref_tag(data, anaphor['id'], coref)
+                # finds the coreference to the anaphor
+                coref = find_coref(idx, anaphor_list)
+                if coref: # find coref returns an anaphor id or `None`
+                    # only insert corefs for the original anaphora
+                    data = utils.insert_coref_tag(data, anaphor['id'], coref)
 
         outfile = utils.build_new_file_path(filename, out_file)
 

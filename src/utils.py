@@ -25,23 +25,25 @@ def lev(a, b):
 
 
 # returns singular, plural, or 'None' for a given pos.
-def get_number(pos):
-    numberDict = {"NN": "singular",
-                  "NNP": "singular",
-                  "he": "singular",
-                  "she": "singular",
-                  "him": "singular",
-                  "her": "singular",
-                  "it": "singular",
-                  "himself": "singular",
-                  "herself": "singular",
-                  "itself": "singular",
-                  "NNS": "plural",
-                  "NNPS": "plural",
-                  "they": "plural",
-                  "them": "plural",
-                  "themselves": "plural",
-                  "PRP": None}
+def get_pluralality(pos):
+    numberDict = {
+        "NN": "singular",
+        "NNP": "singular",
+        "he": "singular",
+        "she": "singular",
+        "him": "singular",
+        "her": "singular",
+        "it": "singular",
+        "himself": "singular",
+        "herself": "singular",
+        "itself": "singular",
+        "NNS": "plural",
+        "NNPS": "plural",
+        "they": "plural",
+        "them": "plural",
+        "themselves": "plural",
+        "PRP": None
+    }
 
     if pos in numberDict:
         return numberDict[pos]
@@ -65,7 +67,7 @@ def get_gender(string):
 
 
 # generates a random unique identifier
-def generate_coref_id(length=5):
+def generate_coref_id(length=8):
     key = ''.join(random.choice('ABCDEF0123456789') for i in range(length))
     return key
 

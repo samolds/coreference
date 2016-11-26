@@ -14,6 +14,9 @@ fi
 if [[ "$DATA_SET" = "dev" ]]; then
   ./run.sh data/filelists/devFiles.txt scorer/responses/
   ./test.sh data/filelists/responselist.txt data/dev/
+elif [[ "$DATA_SET" = "singledev" ]]; then
+  ./run.sh data/filelists/singleFile.txt scorer/responses/
+  ./test.sh data/filelists/responselist.txt data/dev/
 elif [[ "$DATA_SET" = "test1" ]]; then
   ./run.sh data/filelists/test1Files.txt scorer/responses/
   ./test.sh data/filelists/responselist.txt data/test1/
