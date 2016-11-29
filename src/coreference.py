@@ -43,8 +43,8 @@ def find_coref(anaphor_idx, np_list, sentence_trees):
         coref = np_list[prior_anaphor_idx]
 
         # exact string match or just the head nouns match
-        if anaphor['text'] == coref['text'] or \
-            anaphor['text'].split()[-1] == coref['text'].split()[-1]:
+        if anaphor['text'] == coref['text'] or anaphor['text'].split()[-1] == coref['text'].split()[-1] or \
+                        anaphor['text'].split()[-1] in coref['text']:
             return coref
 
         # strings are very similar
