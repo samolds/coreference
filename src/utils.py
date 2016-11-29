@@ -82,14 +82,28 @@ def insert_coref_tag(data, coref_id, ref):
     return data
 
 
+def within_tag(sub_data, noun_phrase_index, tag):
+    tag_index = sub_data.find(tag)
+    return tag_index != -1 and tag_index <= noun_phrase_index and \
+           noun_phrase_index <= tag_index + len(tag)
+
+
 # indicates if the noun phrase beginning at `noun_phrase_index` is between
 # existing open/close COREF xml tags
 def nested_noun_phrase(sub_data, noun_phrase_index):
+    if within_tag(sub_data, noun_phrase_index, "<TXT>"):
+       # the "noun phrase" for some reason is something within the <TXT> element
+       return True
+
+    if within_tag(sub_data, noun_phrase_index, "</TXT>"):
+       # the "noun phrase" for some reason is something within the </TXT> element
+       return True
+
     data_position = 0
     while len(sub_data) > 1:
         open_tag_index = sub_data.find("<COREF ") + data_position
         sub_data_close_index = sub_data.find("</COREF>")
-        close_tag_index = sub_data_close_index + data_position
+        close_tag_index = sub_data_close_index + data_position + len("</COREF>")
 
         # if the first opening tag comes after the first closing tag
         if open_tag_index > close_tag_index:
