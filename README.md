@@ -41,6 +41,7 @@ against the provided scorer with these two arguments:
 ./test.sh data/filelists/responselist.txt data/dev/
 ```
 
+NOTE: This takes a long time. It will take about 10 minutes to process 15 files
 
 ## Easy Testing
 

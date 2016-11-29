@@ -58,7 +58,7 @@ def find_coref(anaphor_idx, np_list, sentence_trees):
         w1 = wn.synsets(anaphor['text'].split()[-1], pos=wn.NOUN)
         w2 = wn.synsets(coref['text'].split()[-1], pos=wn.NOUN)
         if w1 and w2:
-            if(w1[0].wup_similarity(w2[0])) > .65:
+            if(w1[0].wup_similarity(w2[0])) > 0.65:
                 return coref
 
 

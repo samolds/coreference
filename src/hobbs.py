@@ -7,7 +7,8 @@ import nltk
 
 def dirty(sentence_trees, node_position, anaphor, np_list):
   # 1. Begin at the NP node immediately dominating the pronoun
-  pronoun_sentence_tree = sentence_trees[-1] # pronoun expected to be in last tree
+  sentence_trees.reverse() # flip it around so the most recent is at the head
+  pronoun_sentence_tree = sentence_trees[0] # pronoun expected to be in last tree
   dominant_np_position = node_position[:-1]  # strip away last index for parent
   dom_np_tree = pronoun_sentence_tree[dominant_np_position]
 
@@ -23,16 +24,36 @@ def dirty(sentence_trees, node_position, anaphor, np_list):
       break
   x = pronoun_sentence_tree[search_position]
 
-  guess_position = ()
+  # 3. Traverse all branches below node X to the left of path p in a
+  #    left-to-right, breadth-first fashion. Propose as an antecedent any NP
+  #    node that is encountered which has an NP or S node between it and X.
   for branch_pos in x.treepositions():
+    if branch_pos >= path[0]:
+      continue
     branch = x[branch_pos]
     if type(branch) != nltk.tree.Tree:
       continue
     if branch.label() == "NP":
-      guess_position = branch_pos
-      break
+      return resolve(x, branch_pos, anaphor, np_list)
 
-  return resolve(x, guess_position, anaphor, np_list)
+  # 4. If node X is the highest S node in the sentence, traverse the surface
+  #    parse trees of previous sentences in the text in order of recency, the
+  #    most recent first; each tree is traversed in a left-to-right,
+  #    breadth-first manner, and when an NP node is encountered, it is proposed
+  #    as an antecedent. If X is not the highest S node in the sentence,
+  #    continue to step 5.
+  if x == pronoun_sentence_tree:
+    for tree in sentence_trees:
+      for branch_pos in tree.treepositions():
+        branch = tree[branch_pos]
+        if type(branch) != nltk.tree.Tree:
+          continue
+        if branch.label() == "NP":
+          return resolve(x, branch_pos, anaphor, np_list)
+
+  # TODO: Step 5, 6, 7, 8, 9
+
+  return None
 
 
 # returns a coref object from the np_list given the chosen noun phrase from
