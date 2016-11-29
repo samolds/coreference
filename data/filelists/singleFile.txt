@@ -1,1 +1,3 @@
-data/test1/b12.crf
+data/dev/b4.crf
+data/dev/b5.crf
+data/dev/b6.crf

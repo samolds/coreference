@@ -5,6 +5,12 @@ import random
 import nltk
 
 
+PRONOUNS = ["He", "he", "Him", "him", "She", "she", "Her",
+            "her", "It", "it", "They", "they"]
+REFLEXIVES = ["Himself", "himself", "Herself", "herself",
+              "Itself", "itself", "Themselves", "themselves"]
+
+
 def build_new_file_path(filepath, outpath):
     # get just the input filename to build the corresponding output file
     # path
