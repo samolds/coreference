@@ -43,8 +43,8 @@ def find_coref(anaphor_idx, np_list, sentence_trees):
         coref = np_list[prior_anaphor_idx]
 
         # exact string match or just the head nouns match
-        if anaphor['text'] == coref['text'] or anaphor['text'].split()[-1] == coref['text'].split()[-1] or \
-                        anaphor['text'].split()[-1] in coref['text']:
+        if anaphor['text'] == coref['text'] or \
+           anaphor['text'].split()[-1] == coref['text'].split()[-1]:
             return coref
 
         # strings are very similar
@@ -62,7 +62,6 @@ def find_coref(anaphor_idx, np_list, sentence_trees):
                 return coref
 
 
-    ## -------------------------- TODO ----------------------------------------
     # No string matching was found, search again, this time with pronoun
     # resolution
     pro = anaphor['text']
@@ -84,11 +83,10 @@ def find_coref(anaphor_idx, np_list, sentence_trees):
         if pro in utils.PRONOUNS:
             coref = hobbs.hobbs(pre_pronoun_trees, loc_in_tree, anaphor, np_list)
         elif pro in utils.REFLEXIVES:
-            coref = hobbs.hobbs_reflexive(pre_pronoun_trees, loc_in_tree, anaphor, np_list)
-        
+            coref = hobbs.hobbs_reflexive(pre_pronoun_trees, loc_in_tree, anaphor,
+                                          np_list)
         if coref:
             return coref
-    ## ------------------------------------------------------------------------
 
     # No prior resolution was found, search again, this time with gender and number
     for prior_anaphor_idx in prior_anaphor_indices:
