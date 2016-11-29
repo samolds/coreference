@@ -8,7 +8,9 @@ import utils
 import nltk
 from lib.hobbs import hobbs
 from lib.stat_parser.parser import Parser as CkyStatParser
+from nltk.corpus import wordnet as wn
 
+print wn.synsets('IBM')
 
 # finds coreference from within a list of possible noun phrases
 # returns an id of the tagged coref noun phrase or `None` if nothing was found
@@ -17,6 +19,18 @@ def find_coref(anaphor_idx, np_list, sentence_trees):
 
     # only consider anaphors/NPs that show up before the current one
     prior_anaphor_indices = range(anaphor_idx - 1, -1, -1)
+
+    #Match Named Entities
+    for prior_anaphor_idx in prior_anaphor_indices:
+        coref = np_list[prior_anaphor_idx]
+
+        # same category of NE
+        if anaphor['NE'] is not None and anaphor['NE'] == coref['NE'] :
+            # strings are very similar
+            if editDifference(None, anaphor['text'], coref['text']).ratio() > 0.65:
+                # print anaphor['NE'], '--', anaphor['text'], '--', coref['text']
+                return coref
+
 
     # look for any noun phrases with exact string match or just head noun
     # string match in prior anaphors
@@ -31,6 +45,19 @@ def find_coref(anaphor_idx, np_list, sentence_trees):
         # strings are very similar
         if editDifference(None, anaphor['text'], coref['text']).ratio() > 0.65:
             return coref
+
+    for prior_anaphor_idx in prior_anaphor_indices:
+        coref = np_list[prior_anaphor_idx]
+
+    #look for synonyms
+
+        w1 = wn.synsets(anaphor['text'].split()[-1], pos=wn.NOUN)
+        w2 = wn.synsets(coref['text'].split()[-1], pos=wn.NOUN)
+        #
+        # print
+        if w1 and w2:
+            if(w1[0].wup_similarity(w2[0])) > .65:
+                return coref
 
 
     ## No string matching was found, search again, this time with pronoun
@@ -79,13 +106,14 @@ def find_coref(anaphor_idx, np_list, sentence_trees):
     #TODO: include named entity resolution
 
 
+
     # No prior resolution was found, search again, this time with gender and number
     for prior_anaphor_idx in prior_anaphor_indices:
         coref = np_list[prior_anaphor_idx]
 
         # check for gender and number, or string agreement
         if anaphor['gender'] == coref['gender'] and \
-            anaphor['pluralality'] == coref['pluralality']:
+            anaphor['plurality'] == coref['plurality']:
             return coref
 
     # didn't find any coreferences
@@ -133,10 +161,27 @@ def add_np_coref_tags(data, cky_stat_parser):
         """
     cp = nltk.RegexpParser(grammar)
 
+    # chunked_sentences = nltk.ne_chunk_sents(tagged_sentences)
+    # entity_names = []
+    # for sentence in chunked_sentences:
+    #     # Print results per sentence
+    #     # print extract_entity_names(sentence)
+    #
+    #     entity_names.extend(extract_entity_names(sentence))
+    #
+    # # Print all entity names
+    # # print entity_names
+    #
+    # # Print unique entity names
+    # # print set(entity_names)
+
+
+
     # parse each of the tagged sentences into recursive tree structures
     treed_sentences = []
     for idx, tagged_sentence in enumerate(tagged_sentences):
         sentence_tree = cp.parse(tagged_sentence)
+
         treed_sentences.append({
           "raw": raw_sentences[idx],
           "parsed": sentence_tree,
@@ -213,13 +258,23 @@ def process_files(file_list, out_file):
             #tagged = nltk.pos_tag(tokens)
             tagged = cky_stat_parser.nltk_parse(anaphor.text)
 
+            NE = utils.extract_entity_names(nltk.ne_chunk(tagged.pos()))
+            LABELS = utils.extract_entity_labels(nltk.ne_chunk(tagged.pos()))
+            if NE:
+                namedEntity = LABELS[-1]
+            else:
+                namedEntity = None
+
             # build element to hold all relevant information about anaphora
             anaphor_list.append({
                 'id': anaphor.attrib['ID'],
                 'text': anaphor.text,
-                'pos': tagged,
-                'pluralality': utils.get_pluralality(tagged.pos()[-1][1]),
+                'pos': tagged.pos()[-1][1],
+                'plurality': utils.get_plurality(tagged.pos()[-1][1]),
+                # 'plurality': utils.get_plurality(tagged[-1]),
                 'gender': utils.get_gender(anaphor.text),
+                'NE': namedEntity
+
             })
 
         for idx, anaphor in enumerate(anaphor_list):

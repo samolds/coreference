@@ -25,7 +25,7 @@ def lev(a, b):
 
 
 # returns singular, plural, or 'None' for a given pos.
-def get_pluralality(pos):
+def get_plurality(pos):
     numberDict = {
         "NN":         "singular",
         "NNP":        "singular",
@@ -109,3 +109,29 @@ def nested_noun_phrase(sub_data, noun_phrase_index):
         data_position = data_position + closing_position
 
     return False
+
+
+def extract_entity_names(t):
+    entity_names = []
+
+    if hasattr(t, 'label') and t.label:
+        if t.label() != 'S':
+            entity_names.append(' '.join([child[0] for child in t]))
+        else:
+            for child in t:
+                entity_names.extend(extract_entity_names(child))
+
+    return entity_names
+
+
+def extract_entity_labels(t):
+    entity_names = []
+
+    if hasattr(t, 'label') and t.label:
+        if t.label() != 'S':
+            entity_names.append(' '.join(t.label()))
+        else:
+            for child in t:
+                entity_names.extend(extract_entity_labels(child))
+
+    return entity_names
